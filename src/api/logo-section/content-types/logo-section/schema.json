@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "logo_sections",
+  "info": {
+    "singularName": "logo-section",
+    "pluralName": "logo-sections",
+    "displayName": "Logo Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logos": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.logos"
+    }
+  }
+}

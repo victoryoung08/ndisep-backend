@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_component_sliders",
+  "info": {
+    "displayName": "Slider",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "slider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.slider-text-with-image"
+    }
+  }
+}

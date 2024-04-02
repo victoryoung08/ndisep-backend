@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_blocks_slider_text_with_images",
+  "info": {
+    "displayName": "SliderTextWithImage"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}
