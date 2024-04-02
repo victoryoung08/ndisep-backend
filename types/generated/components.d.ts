@@ -11,6 +11,17 @@ export interface BlocksLogos extends Schema.Component {
   };
 }
 
+export interface BlocksSeo extends Schema.Component {
+  collectionName: 'components_blocks_seos';
+  info: {
+    displayName: 'seo';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
 export interface BlocksSliderTextWithImage extends Schema.Component {
   collectionName: 'components_blocks_slider_text_with_images';
   info: {
@@ -20,6 +31,17 @@ export interface BlocksSliderTextWithImage extends Schema.Component {
     image: Attribute.Media;
     heading: Attribute.String;
     body: Attribute.Text;
+  };
+}
+
+export interface ComponentHero extends Schema.Component {
+  collectionName: 'components_component_heroes';
+  info: {
+    displayName: 'Hero';
+    icon: 'folder';
+  };
+  attributes: {
+    seo: Attribute.Component<'blocks.seo'>;
   };
 }
 
@@ -38,7 +60,9 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'blocks.logos': BlocksLogos;
+      'blocks.seo': BlocksSeo;
       'blocks.slider-text-with-image': BlocksSliderTextWithImage;
+      'component.hero': ComponentHero;
       'component.slider': ComponentSlider;
     }
   }

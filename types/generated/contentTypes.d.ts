@@ -362,6 +362,67 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomePageSliderHomePageSlider extends Schema.SingleType {
+  collectionName: 'home_page_sliders';
+  info: {
+    singularName: 'home-page-slider';
+    pluralName: 'home-page-sliders';
+    displayName: 'Home Page Slider';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slider: Attribute.Component<'blocks.slider-text-with-image', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page-slider.home-page-slider',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page-slider.home-page-slider',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLogoSectionLogoSection extends Schema.SingleType {
+  collectionName: 'logo_sections';
+  info: {
+    singularName: 'logo-section';
+    pluralName: 'logo-sections';
+    displayName: 'Logo Section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    logos: Attribute.Component<'blocks.logos'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::logo-section.logo-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::logo-section.logo-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -788,67 +849,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomePageSliderHomePageSlider extends Schema.SingleType {
-  collectionName: 'home_page_sliders';
-  info: {
-    singularName: 'home-page-slider';
-    pluralName: 'home-page-sliders';
-    displayName: 'Home Page Slider';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    slider: Attribute.Component<'blocks.slider-text-with-image', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page-slider.home-page-slider',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page-slider.home-page-slider',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiLogoSectionLogoSection extends Schema.SingleType {
-  collectionName: 'logo_sections';
-  info: {
-    singularName: 'logo-section';
-    pluralName: 'logo-sections';
-    displayName: 'Logo Section';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    logos: Attribute.Component<'blocks.logos'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::logo-section.logo-section',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::logo-section.logo-section',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -859,6 +859,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::home-page-slider.home-page-slider': ApiHomePageSliderHomePageSlider;
+      'api::logo-section.logo-section': ApiLogoSectionLogoSection;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -867,8 +869,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::home-page-slider.home-page-slider': ApiHomePageSliderHomePageSlider;
-      'api::logo-section.logo-section': ApiLogoSectionLogoSection;
     }
   }
 }

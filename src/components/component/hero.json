@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_component_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "seo": {
+      "displayName": "seo",
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.seo"
+    }
+  }
+}
